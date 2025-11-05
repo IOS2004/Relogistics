@@ -80,7 +80,7 @@ const VehicleTypeBarChart = () => {
           gutterBottom
           sx={{
             mb: { xs: 2, sm: 3 },
-            fontSize: { xs: '1rem', sm: '1.25rem' },
+            fontSize: { xs: "1rem", sm: "1.25rem" },
             background: isDark
               ? "linear-gradient(135deg, #ffffff 0%, #94a3b8 100%)"
               : "linear-gradient(135deg, #1e293b 0%, #475569 100%)",
@@ -94,11 +94,11 @@ const VehicleTypeBarChart = () => {
         <ResponsiveContainer width="100%" height={isMobile ? 250 : 300}>
           <BarChart
             data={data}
-            margin={{ 
-              top: 5, 
-              right: isMobile ? 5 : 10, 
-              left: isMobile ? 5 : 10, 
-              bottom: 5 
+            margin={{
+              top: 5,
+              right: isMobile ? 5 : 10,
+              left: isMobile ? 5 : 10,
+              bottom: 5,
             }}
             layout="vertical"
           >
@@ -111,9 +111,9 @@ const VehicleTypeBarChart = () => {
             />
             <XAxis
               type="number"
-              tick={{ 
-                fill: isDark ? "#94a3b8" : "#64748b", 
-                fontSize: isMobile ? 10 : 12 
+              tick={{
+                fill: isDark ? "#94a3b8" : "#64748b",
+                fontSize: isMobile ? 10 : 12,
               }}
               stroke={
                 isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)"
@@ -122,9 +122,9 @@ const VehicleTypeBarChart = () => {
             <YAxis
               type="category"
               dataKey="type"
-              tick={{ 
-                fill: isDark ? "#94a3b8" : "#64748b", 
-                fontSize: isMobile ? 10 : 12 
+              tick={{
+                fill: isDark ? "#94a3b8" : "#64748b",
+                fontSize: isMobile ? 10 : 12,
               }}
               stroke={
                 isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)"
@@ -135,9 +135,9 @@ const VehicleTypeBarChart = () => {
               content={<CustomTooltip />}
               cursor={{ fill: "rgba(59, 130, 246, 0.1)" }}
             />
-            <Bar 
-              dataKey="loads" 
-              radius={[0, 8, 8, 0]} 
+            <Bar
+              dataKey="loads"
+              radius={[0, 8, 8, 0]}
               maxBarSize={isMobile ? 30 : 40}
             >
               {data.map((entry, index) => (

@@ -63,11 +63,11 @@ const DeliveryStatusChart = ({
       }}
     >
       <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
-        <Typography 
-          variant={isMobile ? "subtitle1" : "h6"} 
-          fontWeight={600} 
+        <Typography
+          variant={isMobile ? "subtitle1" : "h6"}
+          fontWeight={600}
           mb={{ xs: 2, sm: 2 }}
-          sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}
+          sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
         >
           {title}
         </Typography>

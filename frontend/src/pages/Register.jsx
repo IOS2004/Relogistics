@@ -11,7 +11,15 @@ import {
   IconButton,
   alpha,
 } from "@mui/material";
-import { ArrowBack, LocalShipping, Person, Email, Phone, Lock, Work } from "@mui/icons-material";
+import {
+  ArrowBack,
+  LocalShipping,
+  Person,
+  Email,
+  Phone,
+  Lock,
+  Work,
+} from "@mui/icons-material";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -46,7 +54,7 @@ const Register = () => {
   const navigate = useNavigate();
   const { mode } = useThemeMode();
   const isDark = mode === "dark";
-  
+
   const [alert, setAlert] = React.useState({
     open: false,
     message: "",
@@ -166,7 +174,9 @@ const Register = () => {
                   : "0 8px 32px rgba(25, 118, 210, 0.3)",
               }}
             >
-              <LocalShipping sx={{ fontSize: { xs: 32, sm: 36 }, color: "white" }} />
+              <LocalShipping
+                sx={{ fontSize: { xs: 32, sm: 36 }, color: "white" }}
+              />
             </Box>
           </Box>
 
@@ -184,7 +194,7 @@ const Register = () => {
           >
             Create Account
           </Typography>
-          
+
           <Typography
             variant="body2"
             align="center"
@@ -211,17 +221,21 @@ const Register = () => {
                   helperText={formik.touched.name && formik.errors.name}
                   InputProps={{
                     startAdornment: (
-                      <Person 
-                        sx={{ 
-                          mr: 1, 
-                          color: isDark ? alpha("#ffffff", 0.5) : "action.active" 
-                        }} 
+                      <Person
+                        sx={{
+                          mr: 1,
+                          color: isDark
+                            ? alpha("#ffffff", 0.5)
+                            : "action.active",
+                        }}
                       />
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      bgcolor: isDark ? alpha("#ffffff", 0.05) : "background.paper",
+                      bgcolor: isDark
+                        ? alpha("#ffffff", 0.05)
+                        : "background.paper",
                     },
                   }}
                 />
@@ -238,17 +252,21 @@ const Register = () => {
                   helperText={formik.touched.email && formik.errors.email}
                   InputProps={{
                     startAdornment: (
-                      <Email 
-                        sx={{ 
-                          mr: 1, 
-                          color: isDark ? alpha("#ffffff", 0.5) : "action.active" 
-                        }} 
+                      <Email
+                        sx={{
+                          mr: 1,
+                          color: isDark
+                            ? alpha("#ffffff", 0.5)
+                            : "action.active",
+                        }}
                       />
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      bgcolor: isDark ? alpha("#ffffff", 0.05) : "background.paper",
+                      bgcolor: isDark
+                        ? alpha("#ffffff", 0.05)
+                        : "background.paper",
                     },
                   }}
                 />
@@ -265,17 +283,21 @@ const Register = () => {
                   helperText={formik.touched.phone && formik.errors.phone}
                   InputProps={{
                     startAdornment: (
-                      <Phone 
-                        sx={{ 
-                          mr: 1, 
-                          color: isDark ? alpha("#ffffff", 0.5) : "action.active" 
-                        }} 
+                      <Phone
+                        sx={{
+                          mr: 1,
+                          color: isDark
+                            ? alpha("#ffffff", 0.5)
+                            : "action.active",
+                        }}
                       />
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      bgcolor: isDark ? alpha("#ffffff", 0.05) : "background.paper",
+                      bgcolor: isDark
+                        ? alpha("#ffffff", 0.05)
+                        : "background.paper",
                     },
                   }}
                 />
@@ -289,21 +311,27 @@ const Register = () => {
                   placeholder="••••••••"
                   value={formik.values.password}
                   onChange={formik.handleChange}
-                  error={formik.touched.password && Boolean(formik.errors.password)}
+                  error={
+                    formik.touched.password && Boolean(formik.errors.password)
+                  }
                   helperText={formik.touched.password && formik.errors.password}
                   InputProps={{
                     startAdornment: (
-                      <Lock 
-                        sx={{ 
-                          mr: 1, 
-                          color: isDark ? alpha("#ffffff", 0.5) : "action.active" 
-                        }} 
+                      <Lock
+                        sx={{
+                          mr: 1,
+                          color: isDark
+                            ? alpha("#ffffff", 0.5)
+                            : "action.active",
+                        }}
                       />
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      bgcolor: isDark ? alpha("#ffffff", 0.05) : "background.paper",
+                      bgcolor: isDark
+                        ? alpha("#ffffff", 0.05)
+                        : "background.paper",
                     },
                   }}
                 />
@@ -320,17 +348,21 @@ const Register = () => {
                   helperText={formik.touched.role && formik.errors.role}
                   InputProps={{
                     startAdornment: (
-                      <Work 
-                        sx={{ 
-                          mr: 1, 
-                          color: isDark ? alpha("#ffffff", 0.5) : "action.active" 
-                        }} 
+                      <Work
+                        sx={{
+                          mr: 1,
+                          color: isDark
+                            ? alpha("#ffffff", 0.5)
+                            : "action.active",
+                        }}
                       />
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      bgcolor: isDark ? alpha("#ffffff", 0.05) : "background.paper",
+                      bgcolor: isDark
+                        ? alpha("#ffffff", 0.05)
+                        : "background.paper",
                     },
                   }}
                 >
@@ -370,9 +402,9 @@ const Register = () => {
                 </Button>
               </Grid>
               <Grid item xs={12} textAlign="center">
-                <Typography 
-                  variant="body2" 
-                  sx={{ 
+                <Typography
+                  variant="body2"
+                  sx={{
                     color: isDark ? alpha("#ffffff", 0.7) : "text.secondary",
                     fontSize: { xs: "0.875rem", sm: "0.875rem" },
                   }}
@@ -400,7 +432,7 @@ const Register = () => {
           </form>
         </Paper>
       </Container>
-      
+
       <AlertMessage
         open={alert.open}
         handleClose={() => setAlert({ ...alert, open: false })}

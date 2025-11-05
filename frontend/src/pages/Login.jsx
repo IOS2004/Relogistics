@@ -27,7 +27,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { mode } = useThemeMode();
   const isDark = mode === "dark";
-  
+
   const [alert, setAlert] = React.useState({
     open: false,
     message: "",
@@ -145,7 +145,9 @@ const Login = () => {
                   : "0 8px 32px rgba(25, 118, 210, 0.3)",
               }}
             >
-              <LocalShipping sx={{ fontSize: { xs: 32, sm: 36 }, color: "white" }} />
+              <LocalShipping
+                sx={{ fontSize: { xs: 32, sm: 36 }, color: "white" }}
+              />
             </Box>
           </Box>
 
@@ -163,7 +165,7 @@ const Login = () => {
           >
             Welcome Back
           </Typography>
-          
+
           <Typography
             variant="body2"
             align="center"
@@ -190,17 +192,21 @@ const Login = () => {
                   helperText={formik.touched.email && formik.errors.email}
                   InputProps={{
                     startAdornment: (
-                      <Email 
-                        sx={{ 
-                          mr: 1, 
-                          color: isDark ? alpha("#ffffff", 0.5) : "action.active" 
-                        }} 
+                      <Email
+                        sx={{
+                          mr: 1,
+                          color: isDark
+                            ? alpha("#ffffff", 0.5)
+                            : "action.active",
+                        }}
                       />
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      bgcolor: isDark ? alpha("#ffffff", 0.05) : "background.paper",
+                      bgcolor: isDark
+                        ? alpha("#ffffff", 0.05)
+                        : "background.paper",
                     },
                   }}
                 />
@@ -214,21 +220,27 @@ const Login = () => {
                   placeholder="••••••••"
                   value={formik.values.password}
                   onChange={formik.handleChange}
-                  error={formik.touched.password && Boolean(formik.errors.password)}
+                  error={
+                    formik.touched.password && Boolean(formik.errors.password)
+                  }
                   helperText={formik.touched.password && formik.errors.password}
                   InputProps={{
                     startAdornment: (
-                      <Lock 
-                        sx={{ 
-                          mr: 1, 
-                          color: isDark ? alpha("#ffffff", 0.5) : "action.active" 
-                        }} 
+                      <Lock
+                        sx={{
+                          mr: 1,
+                          color: isDark
+                            ? alpha("#ffffff", 0.5)
+                            : "action.active",
+                        }}
                       />
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      bgcolor: isDark ? alpha("#ffffff", 0.05) : "background.paper",
+                      bgcolor: isDark
+                        ? alpha("#ffffff", 0.05)
+                        : "background.paper",
                     },
                   }}
                 />
@@ -284,7 +296,7 @@ const Login = () => {
           </form>
         </Paper>
       </Container>
-      
+
       <AlertMessage
         open={alert.open}
         handleClose={() => setAlert({ ...alert, open: false })}

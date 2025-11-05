@@ -111,8 +111,8 @@ const LandingPage = () => {
           position: "sticky",
           top: 0,
           zIndex: 1000,
-          boxShadow: isDark 
-            ? "0 4px 12px rgba(0,0,0,0.5)" 
+          boxShadow: isDark
+            ? "0 4px 12px rgba(0,0,0,0.5)"
             : "0 4px 12px rgba(0,0,0,0.1)",
           backdropFilter: "blur(10px)",
           borderBottom: `1px solid ${alpha("#ffffff", 0.1)}`,
@@ -126,11 +126,11 @@ const LandingPage = () => {
               alignItems: "center",
             }}
           >
-            <Typography 
-              variant="h5" 
+            <Typography
+              variant="h5"
               fontWeight={700}
               sx={{
-                background: isDark 
+                background: isDark
                   ? "linear-gradient(135deg, #e63946 0%, #ff6b6b 100%)"
                   : "linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%)",
                 WebkitBackgroundClip: "text",
@@ -142,57 +142,57 @@ const LandingPage = () => {
             </Typography>
             <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
               <Typography
-                sx={{ 
-                  cursor: "pointer", 
+                sx={{
+                  cursor: "pointer",
                   fontSize: "0.95rem",
                   fontWeight: 500,
                   transition: "all 0.2s",
-                  "&:hover": { 
+                  "&:hover": {
                     color: isDark ? "#e63946" : "#ff6f00",
                     transform: "translateY(-1px)",
-                  } 
+                  },
                 }}
               >
                 Services
               </Typography>
               <Typography
-                sx={{ 
-                  cursor: "pointer", 
+                sx={{
+                  cursor: "pointer",
                   fontSize: "0.95rem",
                   fontWeight: 500,
                   transition: "all 0.2s",
-                  "&:hover": { 
+                  "&:hover": {
                     color: isDark ? "#e63946" : "#ff6f00",
                     transform: "translateY(-1px)",
-                  } 
+                  },
                 }}
               >
                 Solutions
               </Typography>
               <Typography
-                sx={{ 
-                  cursor: "pointer", 
+                sx={{
+                  cursor: "pointer",
                   fontSize: "0.95rem",
                   fontWeight: 500,
                   transition: "all 0.2s",
-                  "&:hover": { 
+                  "&:hover": {
                     color: isDark ? "#e63946" : "#ff6f00",
                     transform: "translateY(-1px)",
-                  } 
+                  },
                 }}
               >
                 Track
               </Typography>
               <Typography
-                sx={{ 
-                  cursor: "pointer", 
+                sx={{
+                  cursor: "pointer",
                   fontSize: "0.95rem",
                   fontWeight: 500,
                   transition: "all 0.2s",
-                  "&:hover": { 
+                  "&:hover": {
                     color: isDark ? "#e63946" : "#ff6f00",
                     transform: "translateY(-1px)",
-                  } 
+                  },
                 }}
               >
                 Support
@@ -208,14 +208,14 @@ const LandingPage = () => {
                   py: 1,
                   borderRadius: 2,
                   textTransform: "none",
-                  boxShadow: isDark 
+                  boxShadow: isDark
                     ? "0 4px 12px rgba(230, 57, 70, 0.3)"
                     : "0 4px 12px rgba(255, 111, 0, 0.3)",
                   transition: "all 0.3s",
                   "&:hover": {
                     bgcolor: isDark ? "#ff4d5a" : "#ff8c00",
                     transform: "translateY(-2px)",
-                    boxShadow: isDark 
+                    boxShadow: isDark
                       ? "0 6px 16px rgba(230, 57, 70, 0.4)"
                       : "0 6px 16px rgba(255, 111, 0, 0.4)",
                   },
@@ -329,7 +329,7 @@ const LandingPage = () => {
                   endIcon={<ArrowForward />}
                   onClick={() => navigate("/register")}
                   sx={{
-                    background: isDark 
+                    background: isDark
                       ? "linear-gradient(135deg, #e63946 0%, #ff4d5a 100%)"
                       : "linear-gradient(135deg, #ff6f00 0%, #ff8c00 100%)",
                     color: "white",
@@ -386,7 +386,9 @@ const LandingPage = () => {
             <Grid item xs={12} md={5}>
               <Card
                 sx={{
-                  bgcolor: isDark ? "rgba(26, 29, 41, 0.95)" : "rgba(255,255,255,0.98)",
+                  bgcolor: isDark
+                    ? "rgba(26, 29, 41, 0.95)"
+                    : "rgba(255,255,255,0.98)",
                   backdropFilter: "blur(20px)",
                   borderRadius: 4,
                   boxShadow: isDark
@@ -405,7 +407,7 @@ const LandingPage = () => {
               >
                 <Box
                   sx={{
-                    background: isDark 
+                    background: isDark
                       ? "linear-gradient(135deg, #e63946 0%, #c62828 100%)"
                       : "linear-gradient(135deg, #1976d2 0%, #1565c0 100%)",
                     color: "white",
@@ -413,7 +415,11 @@ const LandingPage = () => {
                     px: 3,
                   }}
                 >
-                  <Typography variant="h5" fontWeight={700} sx={{ letterSpacing: "-0.5px" }}>
+                  <Typography
+                    variant="h5"
+                    fontWeight={700}
+                    sx={{ letterSpacing: "-0.5px" }}
+                  >
                     Track your order
                   </Typography>
                 </Box>
@@ -467,7 +473,7 @@ const LandingPage = () => {
                     size="large"
                     onClick={handleTrack}
                     sx={{
-                      background: isDark 
+                      background: isDark
                         ? "linear-gradient(135deg, #e63946 0%, #c62828 100%)"
                         : "linear-gradient(135deg, #1976d2 0%, #1565c0 100%)",
                       py: 1.5,
@@ -570,7 +576,10 @@ const LandingPage = () => {
                     border: isDark ? "1px solid #3a3f4b" : "none",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: { xs: "translateY(-4px)", sm: "translateY(-8px)" },
+                      transform: {
+                        xs: "translateY(-4px)",
+                        sm: "translateY(-8px)",
+                      },
                       boxShadow: isDark
                         ? "0 12px 40px rgba(230,57,70,0.3)"
                         : "0 12px 40px rgba(25,118,210,0.2)",
@@ -661,7 +670,10 @@ const LandingPage = () => {
                     cursor: "pointer",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: { xs: "translateY(-4px)", sm: "translateY(-8px)" },
+                      transform: {
+                        xs: "translateY(-4px)",
+                        sm: "translateY(-8px)",
+                      },
                       bgcolor: isDark ? "#2d3139" : "background.paper",
                       boxShadow: isDark
                         ? "0 8px 32px rgba(230,57,70,0.2)"
@@ -679,19 +691,19 @@ const LandingPage = () => {
                   <Typography
                     variant="h6"
                     fontWeight={600}
-                    sx={{ 
-                      mb: 1, 
+                    sx={{
+                      mb: 1,
                       fontSize: { xs: "1rem", sm: "1.25rem" },
-                      color: isDark ? "white" : "text.primary" 
+                      color: isDark ? "white" : "text.primary",
                     }}
                   >
                     {service.title}
                   </Typography>
                   <Typography
                     variant="body2"
-                    sx={{ 
+                    sx={{
                       fontSize: { xs: "0.875rem", sm: "0.875rem" },
-                      color: isDark ? "#b0b3b8" : "text.secondary" 
+                      color: isDark ? "#b0b3b8" : "text.secondary",
                     }}
                   >
                     {service.description}
@@ -715,9 +727,9 @@ const LandingPage = () => {
         }}
       >
         <Container maxWidth="md">
-          <Typography 
-            variant="h3" 
-            fontWeight={700} 
+          <Typography
+            variant="h3"
+            fontWeight={700}
             mb={2}
             sx={{
               fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
@@ -726,10 +738,10 @@ const LandingPage = () => {
           >
             Ready to transform your logistics?
           </Typography>
-          <Typography 
-            variant="h6" 
-            mb={4} 
-            sx={{ 
+          <Typography
+            variant="h6"
+            mb={4}
+            sx={{
               opacity: 0.9,
               fontSize: { xs: "1rem", sm: "1.25rem" },
               px: { xs: 2, sm: 0 },
@@ -770,24 +782,24 @@ const LandingPage = () => {
         <Container maxWidth="lg">
           <Grid container spacing={{ xs: 3, sm: 4 }}>
             <Grid item xs={12} md={4}>
-              <Typography 
-                variant="h6" 
-                fontWeight={700} 
+              <Typography
+                variant="h6"
+                fontWeight={700}
                 mb={2}
                 sx={{ fontSize: { xs: "1.125rem", sm: "1.25rem" } }}
               >
                 Logistics Platform
               </Typography>
-              <Typography 
-                variant="body2" 
-                color="text.secondary" 
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 mb={2}
                 sx={{ fontSize: { xs: "0.875rem", sm: "0.875rem" } }}
               >
                 India's largest fully integrated logistics services provider
               </Typography>
-              <Typography 
-                variant="body2" 
+              <Typography
+                variant="body2"
                 color="text.secondary"
                 sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
               >
@@ -795,33 +807,33 @@ const LandingPage = () => {
               </Typography>
             </Grid>
             <Grid item xs={6} sm={4} md={2}>
-              <Typography 
-                variant="h6" 
-                fontWeight={600} 
+              <Typography
+                variant="h6"
+                fontWeight={600}
                 mb={2}
                 sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
               >
                 Services
               </Typography>
-              <Typography 
-                variant="body2" 
-                color="text.secondary" 
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 mb={1}
                 sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
               >
                 Express Parcel
               </Typography>
-              <Typography 
-                variant="body2" 
-                color="text.secondary" 
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 mb={1}
                 sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
               >
                 Warehousing
               </Typography>
-              <Typography 
-                variant="body2" 
-                color="text.secondary" 
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 mb={1}
                 sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
               >
@@ -829,33 +841,33 @@ const LandingPage = () => {
               </Typography>
             </Grid>
             <Grid item xs={6} sm={4} md={2}>
-              <Typography 
-                variant="h6" 
-                fontWeight={600} 
+              <Typography
+                variant="h6"
+                fontWeight={600}
                 mb={2}
                 sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
               >
                 Company
               </Typography>
-              <Typography 
-                variant="body2" 
-                color="text.secondary" 
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 mb={1}
                 sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
               >
                 About Us
               </Typography>
-              <Typography 
-                variant="body2" 
-                color="text.secondary" 
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 mb={1}
                 sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
               >
                 Careers
               </Typography>
-              <Typography 
-                variant="body2" 
-                color="text.secondary" 
+              <Typography
+                variant="body2"
+                color="text.secondary"
                 mb={1}
                 sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
               >
@@ -863,9 +875,9 @@ const LandingPage = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4}>
-              <Typography 
-                variant="h6" 
-                fontWeight={600} 
+              <Typography
+                variant="h6"
+                fontWeight={600}
                 mb={2}
                 sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
               >
@@ -879,8 +891,8 @@ const LandingPage = () => {
                     color: isDark ? "#e63946" : "primary.main",
                   }}
                 />
-                <Typography 
-                  variant="body2" 
+                <Typography
+                  variant="body2"
                   color="text.secondary"
                   sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
                 >
@@ -895,8 +907,8 @@ const LandingPage = () => {
                     color: isDark ? "#e63946" : "primary.main",
                   }}
                 />
-                <Typography 
-                  variant="body2" 
+                <Typography
+                  variant="body2"
                   color="text.secondary"
                   sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
                 >
@@ -914,8 +926,8 @@ const LandingPage = () => {
               textAlign: "center",
             }}
           >
-            <Typography 
-              variant="body2" 
+            <Typography
+              variant="body2"
               color="text.secondary"
               sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
             >

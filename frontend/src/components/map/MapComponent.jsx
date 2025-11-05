@@ -288,16 +288,28 @@ const MapComponent = ({
         <Typography
           variant="caption"
           fontWeight={700}
-          sx={{ 
-            display: "block", 
+          sx={{
+            display: "block",
             mb: 1,
             fontSize: { xs: "0.65rem", sm: "0.75rem" },
           }}
         >
           Legend
         </Typography>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 0.3, sm: 0.5 } }}>
-          <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1 } }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: { xs: 0.3, sm: 0.5 },
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: { xs: 0.5, sm: 1 },
+            }}
+          >
             <Box
               sx={{
                 width: { xs: 10, sm: 12 },
@@ -307,14 +319,20 @@ const MapComponent = ({
                 border: "2px solid white",
               }}
             />
-            <Typography 
+            <Typography
               variant="caption"
               sx={{ fontSize: { xs: "0.65rem", sm: "0.75rem" } }}
             >
               Pickup
             </Typography>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1 } }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: { xs: 0.5, sm: 1 },
+            }}
+          >
             <Box
               sx={{
                 width: { xs: 10, sm: 12 },
@@ -324,14 +342,20 @@ const MapComponent = ({
                 border: "2px solid white",
               }}
             />
-            <Typography 
+            <Typography
               variant="caption"
               sx={{ fontSize: { xs: "0.65rem", sm: "0.75rem" } }}
             >
               Vehicle
             </Typography>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1 } }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: { xs: 0.5, sm: 1 },
+            }}
+          >
             <Box
               sx={{
                 width: { xs: 10, sm: 12 },
@@ -341,7 +365,7 @@ const MapComponent = ({
                 border: "2px solid white",
               }}
             />
-            <Typography 
+            <Typography
               variant="caption"
               sx={{ fontSize: { xs: "0.65rem", sm: "0.75rem" } }}
             >

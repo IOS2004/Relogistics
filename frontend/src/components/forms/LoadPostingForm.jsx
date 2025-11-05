@@ -75,21 +75,21 @@ const LoadPostingForm = ({ open, onClose, onSubmit }) => {
   });
 
   return (
-    <Dialog 
-      open={open} 
-      onClose={onClose} 
-      maxWidth="md" 
+    <Dialog
+      open={open}
+      onClose={onClose}
+      maxWidth="md"
       fullWidth
       fullScreen={window.innerWidth < 600}
       PaperProps={{
         sx: {
           m: { xs: 0, sm: 2 },
           maxHeight: { xs: "100vh", sm: "90vh" },
-        }
+        },
       }}
     >
       <DialogTitle>
-        <Typography 
+        <Typography
           variant="h6"
           sx={{ fontSize: { xs: "1.125rem", sm: "1.25rem" } }}
         >
@@ -276,17 +276,17 @@ const LoadPostingForm = ({ open, onClose, onSubmit }) => {
           </Grid>
         </DialogContent>
         <DialogActions sx={{ px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 2 } }}>
-          <Button 
+          <Button
             onClick={onClose}
             sx={{ fontSize: { xs: "0.875rem", sm: "0.875rem" } }}
           >
             Cancel
           </Button>
-          <Button 
-            type="submit" 
-            variant="contained" 
+          <Button
+            type="submit"
+            variant="contained"
             color="primary"
-            sx={{ 
+            sx={{
               fontSize: { xs: "0.875rem", sm: "0.875rem" },
               px: { xs: 2, sm: 3 },
             }}
