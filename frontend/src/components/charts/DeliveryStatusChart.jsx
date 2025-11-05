@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { useThemeMode } from "../../theme/ThemeProvider";
+import { useIsMobile } from "../../hooks/useMediaQuery";
 
 const DeliveryStatusChart = ({
   data,
@@ -16,6 +17,7 @@ const DeliveryStatusChart = ({
 }) => {
   const { mode } = useThemeMode();
   const isDark = mode === "dark";
+  const isMobile = useIsMobile();
 
   const defaultData = data || [
     { name: "In Transit", value: 12, color: isDark ? "#4facfe" : "#1976d2" },
@@ -60,11 +62,16 @@ const DeliveryStatusChart = ({
         border: isDark ? "1px solid #3a3f4b" : "none",
       }}
     >
-      <CardContent>
-        <Typography variant="h6" fontWeight={600} mb={2}>
+      <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
+        <Typography 
+          variant={isMobile ? "subtitle1" : "h6"} 
+          fontWeight={600} 
+          mb={{ xs: 2, sm: 2 }}
+          sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}
+        >
           {title}
         </Typography>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={isMobile ? 250 : 300}>
           <PieChart>
             <Pie
               data={defaultData}
@@ -72,7 +79,7 @@ const DeliveryStatusChart = ({
               cy="50%"
               labelLine={false}
               label={renderCustomLabel}
-              outerRadius={100}
+              outerRadius={isMobile ? 70 : 100}
               fill="#8884d8"
               dataKey="value"
             >

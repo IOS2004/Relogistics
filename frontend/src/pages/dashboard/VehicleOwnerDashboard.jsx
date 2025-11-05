@@ -212,7 +212,7 @@ const VehicleOwnerDashboard = () => {
         </Grid>
 
         {/* Charts Section */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
+        <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ mb: { xs: 3, md: 4 } }}>
           <Grid item xs={12} lg={8}>
             <EarningsChart />
           </Grid>
@@ -222,18 +222,27 @@ const VehicleOwnerDashboard = () => {
         </Grid>
 
         {/* My Vehicles Section */}
-        <Box sx={{ mb: 2 }}>
-          <Typography variant="h5" fontWeight={700} gutterBottom>
+        <Box sx={{ mb: { xs: 2, md: 2 } }}>
+          <Typography 
+            variant={isMobile ? "h6" : "h5"} 
+            fontWeight={700} 
+            gutterBottom
+            sx={{ fontSize: { xs: '1.125rem', sm: '1.5rem' } }}
+          >
             My Fleet
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+          <Typography 
+            variant="body2" 
+            color="text.secondary" 
+            sx={{ mb: { xs: 2, md: 3 }, fontSize: { xs: '0.813rem', sm: '0.875rem' } }}
+          >
             Manage and monitor your vehicles
           </Typography>
         </Box>
 
-        <Grid container spacing={3} sx={{ mb: 4 }}>
+        <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ mb: { xs: 3, md: 4 } }}>
           {vehicles.map((vehicle) => (
-            <Grid item xs={12} md={6} lg={4} key={vehicle.id}>
+            <Grid item xs={12} sm={6} lg={4} key={vehicle.id}>
               <EnhancedVehicleCard
                 vehicle={vehicle}
                 onEdit={handleEditVehicle}
@@ -243,18 +252,27 @@ const VehicleOwnerDashboard = () => {
         </Grid>
 
         {/* Available Loads Section */}
-        <Box sx={{ mb: 2 }}>
-          <Typography variant="h5" fontWeight={700} gutterBottom>
+        <Box sx={{ mb: { xs: 2, md: 2 } }}>
+          <Typography 
+            variant={isMobile ? "h6" : "h5"} 
+            fontWeight={700} 
+            gutterBottom
+            sx={{ fontSize: { xs: '1.125rem', sm: '1.5rem' } }}
+          >
             Available Loads
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+          <Typography 
+            variant="body2" 
+            color="text.secondary" 
+            sx={{ mb: { xs: 2, md: 3 }, fontSize: { xs: '0.813rem', sm: '0.875rem' } }}
+          >
             Browse and bid on available shipments
           </Typography>
         </Box>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={{ xs: 2, sm: 3 }}>
           {availableLoads.map((load) => (
-            <Grid item xs={12} md={6} lg={4} key={load.id}>
+            <Grid item xs={12} sm={6} lg={4} key={load.id}>
               <EnhancedLoadCard
                 load={load}
                 onBid={() => handlePlaceBid(load)}

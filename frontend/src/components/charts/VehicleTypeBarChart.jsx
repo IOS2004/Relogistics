@@ -11,10 +11,12 @@ import {
   Cell,
 } from "recharts";
 import { useThemeMode } from "../../theme/ThemeProvider";
+import { useIsMobile } from "../../hooks/useMediaQuery";
 
 const VehicleTypeBarChart = () => {
   const { mode } = useThemeMode();
   const isDark = mode === "dark";
+  const isMobile = useIsMobile();
 
   const data = [
     { type: "Truck", loads: 45, color: "#3b82f6" },
@@ -71,13 +73,14 @@ const VehicleTypeBarChart = () => {
         height: "100%",
       }}
     >
-      <CardContent>
+      <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
         <Typography
-          variant="h6"
+          variant={isMobile ? "subtitle1" : "h6"}
           fontWeight={700}
           gutterBottom
           sx={{
-            mb: 3,
+            mb: { xs: 2, sm: 3 },
+            fontSize: { xs: '1rem', sm: '1.25rem' },
             background: isDark
               ? "linear-gradient(135deg, #ffffff 0%, #94a3b8 100%)"
               : "linear-gradient(135deg, #1e293b 0%, #475569 100%)",
@@ -88,10 +91,15 @@ const VehicleTypeBarChart = () => {
           Loads by Vehicle Type
         </Typography>
 
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={isMobile ? 250 : 300}>
           <BarChart
             data={data}
-            margin={{ top: 5, right: 10, left: 10, bottom: 5 }}
+            margin={{ 
+              top: 5, 
+              right: isMobile ? 5 : 10, 
+              left: isMobile ? 5 : 10, 
+              bottom: 5 
+            }}
             layout="vertical"
           >
             <CartesianGrid
@@ -103,7 +111,10 @@ const VehicleTypeBarChart = () => {
             />
             <XAxis
               type="number"
-              tick={{ fill: isDark ? "#94a3b8" : "#64748b", fontSize: 12 }}
+              tick={{ 
+                fill: isDark ? "#94a3b8" : "#64748b", 
+                fontSize: isMobile ? 10 : 12 
+              }}
               stroke={
                 isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)"
               }
@@ -111,17 +122,24 @@ const VehicleTypeBarChart = () => {
             <YAxis
               type="category"
               dataKey="type"
-              tick={{ fill: isDark ? "#94a3b8" : "#64748b", fontSize: 12 }}
+              tick={{ 
+                fill: isDark ? "#94a3b8" : "#64748b", 
+                fontSize: isMobile ? 10 : 12 
+              }}
               stroke={
                 isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)"
               }
-              width={90}
+              width={isMobile ? 70 : 90}
             />
             <Tooltip
               content={<CustomTooltip />}
               cursor={{ fill: "rgba(59, 130, 246, 0.1)" }}
             />
-            <Bar dataKey="loads" radius={[0, 8, 8, 0]} maxBarSize={40}>
+            <Bar 
+              dataKey="loads" 
+              radius={[0, 8, 8, 0]} 
+              maxBarSize={isMobile ? 30 : 40}
+            >
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
               ))}

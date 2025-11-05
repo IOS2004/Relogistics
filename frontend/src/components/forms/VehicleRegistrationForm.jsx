@@ -84,18 +84,38 @@ const VehicleRegistrationForm = ({
   });
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
+    <Dialog 
+      open={open} 
+      onClose={onClose} 
+      maxWidth="md" 
+      fullWidth
+      fullScreen={window.innerWidth < 600}
+      PaperProps={{
+        sx: {
+          m: { xs: 0, sm: 2 },
+          maxHeight: { xs: "100vh", sm: "90vh" },
+        }
+      }}
+    >
       <DialogTitle>
-        <Typography variant="h6">
+        <Typography 
+          variant="h6"
+          sx={{ fontSize: { xs: "1.125rem", sm: "1.25rem" } }}
+        >
           {initialValues ? "Edit Vehicle" : "Register New Vehicle"}
         </Typography>
       </DialogTitle>
       <form onSubmit={formik.handleSubmit}>
-        <DialogContent>
-          <Grid container spacing={2}>
+        <DialogContent sx={{ px: { xs: 2, sm: 3 } }}>
+          <Grid container spacing={{ xs: 2, sm: 2 }}>
             {/* Basic Details */}
             <Grid item xs={12}>
-              <Typography variant="subtitle1" color="primary" gutterBottom>
+              <Typography 
+                variant="subtitle1" 
+                color="primary" 
+                gutterBottom
+                sx={{ fontSize: { xs: "0.9375rem", sm: "1rem" } }}
+              >
                 Basic Details
               </Typography>
             </Grid>
@@ -184,8 +204,13 @@ const VehicleRegistrationForm = ({
             </Grid>
 
             {/* Document Details */}
-            <Grid item xs={12} sx={{ mt: 2 }}>
-              <Typography variant="subtitle1" color="primary" gutterBottom>
+            <Grid item xs={12} sx={{ mt: { xs: 1, sm: 2 } }}>
+              <Typography 
+                variant="subtitle1" 
+                color="primary" 
+                gutterBottom
+                sx={{ fontSize: { xs: "0.9375rem", sm: "1rem" } }}
+              >
                 Document Details
               </Typography>
             </Grid>
@@ -263,8 +288,13 @@ const VehicleRegistrationForm = ({
             </Grid>
 
             {/* Features */}
-            <Grid item xs={12} sx={{ mt: 2 }}>
-              <Typography variant="subtitle1" color="primary" gutterBottom>
+            <Grid item xs={12} sx={{ mt: { xs: 1, sm: 2 } }}>
+              <Typography 
+                variant="subtitle1" 
+                color="primary" 
+                gutterBottom
+                sx={{ fontSize: { xs: "0.9375rem", sm: "1rem" } }}
+              >
                 Features
               </Typography>
             </Grid>
@@ -296,9 +326,22 @@ const VehicleRegistrationForm = ({
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={onClose}>Cancel</Button>
-          <Button type="submit" variant="contained" color="primary">
+        <DialogActions sx={{ px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 2 } }}>
+          <Button 
+            onClick={onClose}
+            sx={{ fontSize: { xs: "0.875rem", sm: "0.875rem" } }}
+          >
+            Cancel
+          </Button>
+          <Button 
+            type="submit" 
+            variant="contained" 
+            color="primary"
+            sx={{ 
+              fontSize: { xs: "0.875rem", sm: "0.875rem" },
+              px: { xs: 2, sm: 3 },
+            }}
+          >
             {initialValues ? "Update Vehicle" : "Register Vehicle"}
           </Button>
         </DialogActions>

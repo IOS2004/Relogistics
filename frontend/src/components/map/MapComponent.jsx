@@ -129,7 +129,14 @@ const MapComponent = ({
         center={center}
         zoom={zoom}
         scrollWheelZoom={true}
+        touchZoom={true}
+        doubleClickZoom={true}
+        dragging={true}
+        zoomControl={true}
+        tap={true}
         style={{ height: "100%", width: "100%" }}
+        zoomSnap={0.5}
+        zoomDelta={0.5}
       >
         <MapViewController center={center} zoom={zoom} />
 
@@ -261,14 +268,14 @@ const MapComponent = ({
       <Box
         sx={{
           position: "absolute",
-          bottom: 16,
-          right: 16,
+          bottom: { xs: 8, sm: 16 },
+          right: { xs: 8, sm: 16 },
           backgroundColor: isDark
             ? "rgba(26, 29, 41, 0.95)"
             : "rgba(255, 255, 255, 0.95)",
           backdropFilter: "blur(8px)",
           borderRadius: 2,
-          p: 1.5,
+          p: { xs: 1, sm: 1.5 },
           boxShadow: isDark
             ? "0 4px 16px rgba(0, 0, 0, 0.4)"
             : "0 4px 16px rgba(0, 0, 0, 0.1)",
@@ -281,46 +288,65 @@ const MapComponent = ({
         <Typography
           variant="caption"
           fontWeight={700}
-          sx={{ display: "block", mb: 1 }}
+          sx={{ 
+            display: "block", 
+            mb: 1,
+            fontSize: { xs: "0.65rem", sm: "0.75rem" },
+          }}
         >
           Legend
         </Typography>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 0.3, sm: 0.5 } }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1 } }}>
             <Box
               sx={{
-                width: 12,
-                height: 12,
+                width: { xs: 10, sm: 12 },
+                height: { xs: 10, sm: 12 },
                 borderRadius: "50%",
                 bgcolor: "#3b82f6",
                 border: "2px solid white",
               }}
             />
-            <Typography variant="caption">Pickup</Typography>
+            <Typography 
+              variant="caption"
+              sx={{ fontSize: { xs: "0.65rem", sm: "0.75rem" } }}
+            >
+              Pickup
+            </Typography>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1 } }}>
             <Box
               sx={{
-                width: 12,
-                height: 12,
+                width: { xs: 10, sm: 12 },
+                height: { xs: 10, sm: 12 },
                 borderRadius: "50%",
                 bgcolor: "#10b981",
                 border: "2px solid white",
               }}
             />
-            <Typography variant="caption">Vehicle</Typography>
+            <Typography 
+              variant="caption"
+              sx={{ fontSize: { xs: "0.65rem", sm: "0.75rem" } }}
+            >
+              Vehicle
+            </Typography>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1 } }}>
             <Box
               sx={{
-                width: 12,
-                height: 12,
+                width: { xs: 10, sm: 12 },
+                height: { xs: 10, sm: 12 },
                 borderRadius: "50%",
                 bgcolor: "#ef4444",
                 border: "2px solid white",
               }}
             />
-            <Typography variant="caption">Dropoff</Typography>
+            <Typography 
+              variant="caption"
+              sx={{ fontSize: { xs: "0.65rem", sm: "0.75rem" } }}
+            >
+              Dropoff
+            </Typography>
           </Box>
         </Box>
       </Box>

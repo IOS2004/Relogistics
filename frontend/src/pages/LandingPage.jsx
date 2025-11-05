@@ -510,7 +510,7 @@ const LandingPage = () => {
       {/* Stats Section */}
       <Box
         sx={{
-          py: 8,
+          py: { xs: 6, sm: 8 },
           bgcolor: isDark ? "#1a1d29" : "background.paper",
         }}
       >
@@ -521,6 +521,8 @@ const LandingPage = () => {
               textAlign: "center",
               fontWeight: 700,
               mb: 2,
+              fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
+              px: { xs: 2, sm: 0 },
               color: isDark ? "white" : "text.primary",
             }}
           >
@@ -532,6 +534,8 @@ const LandingPage = () => {
               textAlign: "center",
               fontWeight: 700,
               mb: 1,
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.125rem" },
+              px: { xs: 2, sm: 0 },
               color: isDark ? "white" : "text.primary",
             }}
           >
@@ -545,28 +549,28 @@ const LandingPage = () => {
           </Typography>
           <Box
             sx={{
-              width: 100,
+              width: { xs: 60, sm: 100 },
               height: 4,
               bgcolor: isDark ? "#e63946" : "primary.main",
               mx: "auto",
-              mb: 6,
+              mb: { xs: 4, sm: 6 },
               borderRadius: 2,
             }}
           />
 
-          <Grid container spacing={4}>
+          <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
             {stats.map((stat, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+              <Grid item xs={6} sm={6} md={3} key={index}>
                 <Card
                   sx={{
                     textAlign: "center",
-                    p: 3,
+                    p: { xs: 2, sm: 3 },
                     height: "100%",
                     bgcolor: isDark ? "#2d3139" : "background.paper",
                     border: isDark ? "1px solid #3a3f4b" : "none",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: "translateY(-8px)",
+                      transform: { xs: "translateY(-4px)", sm: "translateY(-8px)" },
                       boxShadow: isDark
                         ? "0 12px 40px rgba(230,57,70,0.3)"
                         : "0 12px 40px rgba(25,118,210,0.2)",
@@ -575,8 +579,8 @@ const LandingPage = () => {
                 >
                   <Box
                     sx={{
-                      width: 80,
-                      height: 80,
+                      width: { xs: 50, sm: 64, md: 80 },
+                      height: { xs: 50, sm: 64, md: 80 },
                       borderRadius: "50%",
                       bgcolor: isDark
                         ? alpha("#e63946", 0.2)
@@ -585,12 +589,12 @@ const LandingPage = () => {
                       alignItems: "center",
                       justifyContent: "center",
                       mx: "auto",
-                      mb: 2,
+                      mb: { xs: 1.5, sm: 2 },
                     }}
                   >
                     <stat.icon
                       sx={{
-                        fontSize: 40,
+                        fontSize: { xs: 28, sm: 36, md: 40 },
                         color: isDark ? "#e63946" : "primary.main",
                       }}
                     />
@@ -599,7 +603,8 @@ const LandingPage = () => {
                     variant="h3"
                     sx={{
                       fontWeight: 700,
-                      mb: 1,
+                      mb: { xs: 0.5, sm: 1 },
+                      fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
                       color: isDark ? "#e63946" : "primary.main",
                     }}
                   >
@@ -610,6 +615,7 @@ const LandingPage = () => {
                     sx={{
                       color: isDark ? "#b0b3b8" : "text.secondary",
                       fontWeight: 500,
+                      fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1rem" },
                     }}
                   >
                     {stat.label}
@@ -624,7 +630,7 @@ const LandingPage = () => {
       {/* Services Section */}
       <Box
         sx={{
-          py: 8,
+          py: { xs: 6, sm: 8 },
           bgcolor: isDark ? "#0a0e1a" : "background.default",
         }}
       >
@@ -634,26 +640,28 @@ const LandingPage = () => {
             sx={{
               textAlign: "center",
               fontWeight: 700,
-              mb: 6,
+              mb: { xs: 4, sm: 6 },
+              fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
+              px: { xs: 2, sm: 0 },
               color: isDark ? "white" : "text.primary",
             }}
           >
             Our Services
           </Typography>
 
-          <Grid container spacing={3}>
+          <Grid container spacing={{ xs: 2, sm: 3 }}>
             {services.map((service, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card
                   sx={{
-                    p: 3,
+                    p: { xs: 2.5, sm: 3 },
                     height: "100%",
                     bgcolor: isDark ? "#1a1d29" : "background.paper",
                     border: isDark ? "1px solid #3a3f4b" : "none",
                     cursor: "pointer",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: "translateY(-8px)",
+                      transform: { xs: "translateY(-4px)", sm: "translateY(-8px)" },
                       bgcolor: isDark ? "#2d3139" : "background.paper",
                       boxShadow: isDark
                         ? "0 8px 32px rgba(230,57,70,0.2)"
@@ -663,21 +671,28 @@ const LandingPage = () => {
                 >
                   <service.icon
                     sx={{
-                      fontSize: 48,
+                      fontSize: { xs: 40, sm: 48 },
                       color: isDark ? "#e63946" : "primary.main",
-                      mb: 2,
+                      mb: { xs: 1.5, sm: 2 },
                     }}
                   />
                   <Typography
                     variant="h6"
                     fontWeight={600}
-                    sx={{ mb: 1, color: isDark ? "white" : "text.primary" }}
+                    sx={{ 
+                      mb: 1, 
+                      fontSize: { xs: "1rem", sm: "1.25rem" },
+                      color: isDark ? "white" : "text.primary" 
+                    }}
                   >
                     {service.title}
                   </Typography>
                   <Typography
                     variant="body2"
-                    sx={{ color: isDark ? "#b0b3b8" : "text.secondary" }}
+                    sx={{ 
+                      fontSize: { xs: "0.875rem", sm: "0.875rem" },
+                      color: isDark ? "#b0b3b8" : "text.secondary" 
+                    }}
                   >
                     {service.description}
                   </Typography>
@@ -691,7 +706,7 @@ const LandingPage = () => {
       {/* CTA Section */}
       <Box
         sx={{
-          py: 8,
+          py: { xs: 6, sm: 8 },
           background: isDark
             ? "linear-gradient(135deg, #1a1d29 0%, #e63946 100%)"
             : "linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)",
@@ -700,10 +715,26 @@ const LandingPage = () => {
         }}
       >
         <Container maxWidth="md">
-          <Typography variant="h3" fontWeight={700} mb={2}>
+          <Typography 
+            variant="h3" 
+            fontWeight={700} 
+            mb={2}
+            sx={{
+              fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
+              px: { xs: 2, sm: 0 },
+            }}
+          >
             Ready to transform your logistics?
           </Typography>
-          <Typography variant="h6" mb={4} sx={{ opacity: 0.9 }}>
+          <Typography 
+            variant="h6" 
+            mb={4} 
+            sx={{ 
+              opacity: 0.9,
+              fontSize: { xs: "1rem", sm: "1.25rem" },
+              px: { xs: 2, sm: 0 },
+            }}
+          >
             Join thousands of businesses using our platform
           </Typography>
           <Button
@@ -713,9 +744,9 @@ const LandingPage = () => {
             sx={{
               bgcolor: "white",
               color: isDark ? "#e63946" : "primary.main",
-              px: 6,
-              py: 2,
-              fontSize: "1.125rem",
+              px: { xs: 4, sm: 6 },
+              py: { xs: 1.5, sm: 2 },
+              fontSize: { xs: "1rem", sm: "1.125rem" },
               fontWeight: 600,
               "&:hover": {
                 bgcolor: alpha("#ffffff", 0.9),
@@ -731,77 +762,144 @@ const LandingPage = () => {
       {/* Footer */}
       <Box
         sx={{
-          py: 6,
+          py: { xs: 4, sm: 6 },
           bgcolor: isDark ? "#1a1d29" : "background.paper",
           borderTop: isDark ? "1px solid #3a3f4b" : "1px solid #e0e0e0",
         }}
       >
         <Container maxWidth="lg">
-          <Grid container spacing={4}>
+          <Grid container spacing={{ xs: 3, sm: 4 }}>
             <Grid item xs={12} md={4}>
-              <Typography variant="h6" fontWeight={700} mb={2}>
+              <Typography 
+                variant="h6" 
+                fontWeight={700} 
+                mb={2}
+                sx={{ fontSize: { xs: "1.125rem", sm: "1.25rem" } }}
+              >
                 Logistics Platform
               </Typography>
-              <Typography variant="body2" color="text.secondary" mb={2}>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                mb={2}
+                sx={{ fontSize: { xs: "0.875rem", sm: "0.875rem" } }}
+              >
                 India's largest fully integrated logistics services provider
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography 
+                variant="body2" 
+                color="text.secondary"
+                sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
+              >
                 ISO 9001: 2015, ISO 27001: 2022 Certified Company
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4} md={2}>
-              <Typography variant="h6" fontWeight={600} mb={2}>
+            <Grid item xs={6} sm={4} md={2}>
+              <Typography 
+                variant="h6" 
+                fontWeight={600} 
+                mb={2}
+                sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+              >
                 Services
               </Typography>
-              <Typography variant="body2" color="text.secondary" mb={1}>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                mb={1}
+                sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+              >
                 Express Parcel
               </Typography>
-              <Typography variant="body2" color="text.secondary" mb={1}>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                mb={1}
+                sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+              >
                 Warehousing
               </Typography>
-              <Typography variant="body2" color="text.secondary" mb={1}>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                mb={1}
+                sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+              >
                 Full Truckload
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4} md={2}>
-              <Typography variant="h6" fontWeight={600} mb={2}>
+            <Grid item xs={6} sm={4} md={2}>
+              <Typography 
+                variant="h6" 
+                fontWeight={600} 
+                mb={2}
+                sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+              >
                 Company
               </Typography>
-              <Typography variant="body2" color="text.secondary" mb={1}>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                mb={1}
+                sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+              >
                 About Us
               </Typography>
-              <Typography variant="body2" color="text.secondary" mb={1}>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                mb={1}
+                sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+              >
                 Careers
               </Typography>
-              <Typography variant="body2" color="text.secondary" mb={1}>
+              <Typography 
+                variant="body2" 
+                color="text.secondary" 
+                mb={1}
+                sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+              >
                 Contact
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4} md={4}>
-              <Typography variant="h6" fontWeight={600} mb={2}>
+            <Grid item xs={12} sm={12} md={4}>
+              <Typography 
+                variant="h6" 
+                fontWeight={600} 
+                mb={2}
+                sx={{ fontSize: { xs: "1rem", sm: "1.25rem" } }}
+              >
                 Get in Touch
               </Typography>
               <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                 <Phone
                   sx={{
-                    fontSize: 18,
+                    fontSize: { xs: 16, sm: 18 },
                     mr: 1,
                     color: isDark ? "#e63946" : "primary.main",
                   }}
                 />
-                <Typography variant="body2" color="text.secondary">
+                <Typography 
+                  variant="body2" 
+                  color="text.secondary"
+                  sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+                >
                   +91 80698 56101
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                 <Email
                   sx={{
-                    fontSize: 18,
+                    fontSize: { xs: 16, sm: 18 },
                     mr: 1,
                     color: isDark ? "#e63946" : "primary.main",
                   }}
                 />
-                <Typography variant="body2" color="text.secondary">
+                <Typography 
+                  variant="body2" 
+                  color="text.secondary"
+                  sx={{ fontSize: { xs: "0.8125rem", sm: "0.875rem" } }}
+                >
                   support@logistics.com
                 </Typography>
               </Box>
@@ -809,14 +907,18 @@ const LandingPage = () => {
           </Grid>
           <Box
             sx={{
-              mt: 4,
-              pt: 4,
+              mt: { xs: 3, sm: 4 },
+              pt: { xs: 3, sm: 4 },
               borderTop: "1px solid",
               borderColor: "divider",
               textAlign: "center",
             }}
           >
-            <Typography variant="body2" color="text.secondary">
+            <Typography 
+              variant="body2" 
+              color="text.secondary"
+              sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
+            >
               © 2025 Logistics Platform. All rights reserved.
             </Typography>
           </Box>
