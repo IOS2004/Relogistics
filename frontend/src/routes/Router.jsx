@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Box } from "@mui/material";
-import LandingPage from "../pages/LandingPage.jsx";
+import LandingPage from "../pages/LandingPageNew.jsx";
 import Register from "../pages/Register.jsx";
 import Login from "../pages/Login.jsx";
 import BrokerDashboard from "../pages/dashboard/BrokerDashboard.jsx";
@@ -25,7 +25,7 @@ import BottomNavigation from "../components/common/BottomNavigation.jsx";
 
 const DashboardRouter = () => {
   const userRole = localStorage.getItem("userRole");
-  
+
   switch (userRole?.toLowerCase()) {
     case "broker":
       return <BrokerDashboard />;
@@ -53,7 +53,11 @@ const AppRouter = () => {
           {/* Protected Routes */}
           <Route
             path="/dashboard"
-            element={<PrivateRoute><DashboardRouter /></PrivateRoute>}
+            element={
+              <PrivateRoute>
+                <DashboardRouter />
+              </PrivateRoute>
+            }
           />
 
           {/* Role-specific dashboard routes */}

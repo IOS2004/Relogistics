@@ -143,7 +143,9 @@ const LandingPage = () => {
             <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
               <Typography
                 onClick={() => {
-                  document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("services-section")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 sx={{
                   cursor: "pointer",
@@ -160,7 +162,9 @@ const LandingPage = () => {
               </Typography>
               <Typography
                 onClick={() => {
-                  document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("services-section")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 sx={{
                   cursor: "pointer",
@@ -177,7 +181,9 @@ const LandingPage = () => {
               </Typography>
               <Typography
                 onClick={() => {
-                  document.getElementById('tracking-section')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("tracking-section")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 sx={{
                   cursor: "pointer",
@@ -194,7 +200,9 @@ const LandingPage = () => {
               </Typography>
               <Typography
                 onClick={() => {
-                  document.getElementById('footer-section')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("footer-section")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 sx={{
                   cursor: "pointer",

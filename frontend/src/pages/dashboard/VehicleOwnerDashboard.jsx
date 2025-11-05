@@ -152,146 +152,131 @@ const VehicleOwnerDashboard = () => {
     >
       {/* Header */}
       <Box sx={{ mb: { xs: 3, md: 4 } }}>
-          <Typography
-            variant={isMobile ? "h4" : "h3"}
-            sx={{
-              fontWeight: 700,
-              mb: 1,
-              fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
-            }}
-          >
-            Vehicle Owner Dashboard
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{
-              mb: { xs: 2, md: 3 },
-              fontSize: { xs: "0.875rem", sm: "1rem" },
-            }}
-          >
-            Manage your fleet and track earnings
-          </Typography>
-          <Button
-            variant="contained"
-            size={isMobile ? "medium" : "large"}
-            startIcon={!isMobile && <Add />}
-            onClick={() => {
-              setSelectedVehicle(null);
-              setOpenVehicleForm(true);
-            }}
-            sx={{
-              px: { xs: 3, md: 4 },
-              py: { xs: 1, md: 1.5 },
-              borderRadius: 3,
-              width: { xs: "100%", sm: "auto" },
-              fontSize: { xs: "0.875rem", sm: "1rem" },
-            }}
-          >
-            {isMobile ? "Add Vehicle" : "Add New Vehicle"}
-          </Button>
-        </Box>
-
-        {/* Stats Cards */}
-        <Grid
-          container
-          spacing={{ xs: 2, sm: 3 }}
-          sx={{ mb: { xs: 3, md: 4 } }}
+        <Typography
+          variant={isMobile ? "h4" : "h3"}
+          sx={{
+            fontWeight: 700,
+            mb: 1,
+            fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
+          }}
         >
-          {stats.map((stat, index) => (
-            <Grid item xs={6} sm={6} lg={3} key={index}>
-              <ModernStatCard {...stat} />
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* Charts Section */}
-        <Grid
-          container
-          spacing={{ xs: 2, sm: 3 }}
-          sx={{ mb: { xs: 3, md: 4 } }}
+          Vehicle Owner Dashboard
+        </Typography>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{
+            mb: { xs: 2, md: 3 },
+            fontSize: { xs: "0.875rem", sm: "1rem" },
+          }}
         >
-          <Grid item xs={12} lg={8}>
-            <EarningsChart />
+          Manage your fleet and track earnings
+        </Typography>
+        <Button
+          variant="contained"
+          size={isMobile ? "medium" : "large"}
+          startIcon={!isMobile && <Add />}
+          onClick={() => {
+            setSelectedVehicle(null);
+            setOpenVehicleForm(true);
+          }}
+          sx={{
+            px: { xs: 3, md: 4 },
+            py: { xs: 1, md: 1.5 },
+            borderRadius: 3,
+            width: { xs: "100%", sm: "auto" },
+            fontSize: { xs: "0.875rem", sm: "1rem" },
+          }}
+        >
+          {isMobile ? "Add Vehicle" : "Add New Vehicle"}
+        </Button>
+      </Box>
+
+      {/* Stats Cards */}
+      <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ mb: { xs: 3, md: 4 } }}>
+        {stats.map((stat, index) => (
+          <Grid item xs={6} sm={6} lg={3} key={index}>
+            <ModernStatCard {...stat} />
           </Grid>
-          <Grid item xs={12} lg={4}>
-            <VehicleUtilizationChart />
-          </Grid>
+        ))}
+      </Grid>
+
+      {/* Charts Section */}
+      <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ mb: { xs: 3, md: 4 } }}>
+        <Grid item xs={12} lg={8}>
+          <EarningsChart />
         </Grid>
+        <Grid item xs={12} lg={4}>
+          <VehicleUtilizationChart />
+        </Grid>
+      </Grid>
 
-        {/* My Vehicles Section */}
-        <Box sx={{ mb: { xs: 2, md: 2 } }}>
-          <Typography
-            variant={isMobile ? "h6" : "h5"}
-            fontWeight={700}
-            gutterBottom
-            sx={{ fontSize: { xs: "1.125rem", sm: "1.5rem" } }}
-          >
-            My Fleet
-          </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{
-              mb: { xs: 2, md: 3 },
-              fontSize: { xs: "0.813rem", sm: "0.875rem" },
-            }}
-          >
-            Manage and monitor your vehicles
-          </Typography>
-        </Box>
-
-        <Grid
-          container
-          spacing={{ xs: 2, sm: 3 }}
-          sx={{ mb: { xs: 3, md: 4 } }}
+      {/* My Vehicles Section */}
+      <Box sx={{ mb: { xs: 2, md: 2 } }}>
+        <Typography
+          variant={isMobile ? "h6" : "h5"}
+          fontWeight={700}
+          gutterBottom
+          sx={{ fontSize: { xs: "1.125rem", sm: "1.5rem" } }}
         >
-          {vehicles.map((vehicle) => (
-            <Grid item xs={12} sm={6} lg={4} key={vehicle.id}>
-              <EnhancedVehicleCard
-                vehicle={vehicle}
-                onEdit={handleEditVehicle}
-              />
-            </Grid>
-          ))}
-        </Grid>
+          My Fleet
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{
+            mb: { xs: 2, md: 3 },
+            fontSize: { xs: "0.813rem", sm: "0.875rem" },
+          }}
+        >
+          Manage and monitor your vehicles
+        </Typography>
+      </Box>
 
-        {/* Available Loads Section */}
-        <Box sx={{ mb: { xs: 2, md: 2 } }}>
-          <Typography
-            variant={isMobile ? "h6" : "h5"}
-            fontWeight={700}
-            gutterBottom
-            sx={{ fontSize: { xs: "1.125rem", sm: "1.5rem" } }}
-          >
-            Available Loads
-          </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{
-              mb: { xs: 2, md: 3 },
-              fontSize: { xs: "0.813rem", sm: "0.875rem" },
-            }}
-          >
-            Browse and bid on available shipments
-          </Typography>
-        </Box>
+      <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ mb: { xs: 3, md: 4 } }}>
+        {vehicles.map((vehicle) => (
+          <Grid item xs={12} sm={6} lg={4} key={vehicle.id}>
+            <EnhancedVehicleCard vehicle={vehicle} onEdit={handleEditVehicle} />
+          </Grid>
+        ))}
+      </Grid>
 
-        <Grid container spacing={{ xs: 2, sm: 3 }}>
-          {availableLoads.map((load) => (
-            <Grid item xs={12} sm={6} lg={4} key={load.id}>
-              <EnhancedLoadCard
-                load={load}
-                onBid={() => handlePlaceBid(load)}
-                showBidButton={true}
-              />
-            </Grid>
-          ))}
-        </Grid>
+      {/* Available Loads Section */}
+      <Box sx={{ mb: { xs: 2, md: 2 } }}>
+        <Typography
+          variant={isMobile ? "h6" : "h5"}
+          fontWeight={700}
+          gutterBottom
+          sx={{ fontSize: { xs: "1.125rem", sm: "1.5rem" } }}
+        >
+          Available Loads
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{
+            mb: { xs: 2, md: 3 },
+            fontSize: { xs: "0.813rem", sm: "0.875rem" },
+          }}
+        >
+          Browse and bid on available shipments
+        </Typography>
+      </Box>
 
-        {/* Dialogs */}
-        <VehicleRegistrationForm
+      <Grid container spacing={{ xs: 2, sm: 3 }}>
+        {availableLoads.map((load) => (
+          <Grid item xs={12} sm={6} lg={4} key={load.id}>
+            <EnhancedLoadCard
+              load={load}
+              onBid={() => handlePlaceBid(load)}
+              showBidButton={true}
+            />
+          </Grid>
+        ))}
+      </Grid>
+
+      {/* Dialogs */}
+      <VehicleRegistrationForm
         open={openVehicleForm}
         onClose={() => {
           setOpenVehicleForm(false);
