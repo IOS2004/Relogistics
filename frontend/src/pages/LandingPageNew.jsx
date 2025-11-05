@@ -34,12 +34,12 @@ const AnimatedCounter = ({ end, duration = 2, suffix = "" }) => {
 
   useEffect(() => {
     if (!hasAnimated) return;
-    
+
     let startTime;
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = (timestamp - startTime) / (duration * 1000);
-      
+
       if (progress < 1) {
         setCount(Math.floor(end * progress));
         requestAnimationFrame(animate);
@@ -47,7 +47,7 @@ const AnimatedCounter = ({ end, duration = 2, suffix = "" }) => {
         setCount(end);
       }
     };
-    
+
     requestAnimationFrame(animate);
   }, [hasAnimated, end, duration]);
 
@@ -150,7 +150,7 @@ const LandingPageNew = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
@@ -441,10 +441,7 @@ const LandingPageNew = () => {
               py: 2,
             }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Typography
                 variant="h5"
                 sx={{
@@ -488,7 +485,10 @@ const LandingPageNew = () => {
               ))}
               <ThemeToggle />
               <MagneticButton>
-                <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <Button
                     variant="contained"
                     onClick={() => navigate("/login")}
@@ -588,7 +588,9 @@ const LandingPageNew = () => {
                   variant="h5"
                   sx={{
                     mb: 5,
-                    color: isDark ? alpha("#ffffff", 0.7) : alpha("#000000", 0.7),
+                    color: isDark
+                      ? alpha("#ffffff", 0.7)
+                      : alpha("#000000", 0.7),
                     fontSize: { xs: "1.1rem", md: "1.3rem" },
                     fontWeight: 500,
                   }}
@@ -628,40 +630,40 @@ const LandingPageNew = () => {
                         "&:hover": {
                           boxShadow: isDark
                             ? "0 20px 60px rgba(230, 57, 70, 0.6)"
-                          : "0 16px 50px rgba(25, 118, 210, 0.4)",
-                      },
-                    }}
-                  >
-                    Start Shipping Now
-                  </Button>
+                            : "0 16px 50px rgba(25, 118, 210, 0.4)",
+                        },
+                      }}
+                    >
+                      Start Shipping Now
+                    </Button>
                   </MagneticButton>
                   <MagneticButton>
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    component={motion.button}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    sx={{
-                      px: 5,
-                      py: 2,
-                      fontSize: "1.1rem",
-                      fontWeight: 700,
-                      borderRadius: 3,
-                      textTransform: "none",
-                      borderWidth: 2,
-                      borderColor: isDark ? "#e63946" : "#1976d2",
-                      color: isDark ? "#e63946" : "#1976d2",
-                      "&:hover": {
+                    <Button
+                      variant="outlined"
+                      size="large"
+                      component={motion.button}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      whileTap={{ scale: 0.95 }}
+                      sx={{
+                        px: 5,
+                        py: 2,
+                        fontSize: "1.1rem",
+                        fontWeight: 700,
+                        borderRadius: 3,
+                        textTransform: "none",
                         borderWidth: 2,
-                        bgcolor: isDark
-                          ? alpha("#e63946", 0.1)
-                          : alpha("#1976d2", 0.1),
-                      },
-                    }}
-                  >
-                    Watch Demo
-                  </Button>
+                        borderColor: isDark ? "#e63946" : "#1976d2",
+                        color: isDark ? "#e63946" : "#1976d2",
+                        "&:hover": {
+                          borderWidth: 2,
+                          bgcolor: isDark
+                            ? alpha("#e63946", 0.1)
+                            : alpha("#1976d2", 0.1),
+                        },
+                      }}
+                    >
+                      Watch Demo
+                    </Button>
                   </MagneticButton>
                 </Box>
               </motion.div>
@@ -788,7 +790,11 @@ const LandingPageNew = () => {
       </Box>
 
       {/* Stats Section */}
-      <Container data-section maxWidth="xl" sx={{ position: "relative", zIndex: 1, py: 8 }}>
+      <Container
+        data-section
+        maxWidth="xl"
+        sx={{ position: "relative", zIndex: 1, py: 8 }}
+      >
         <Grid container spacing={4}>
           {stats.map((stat, index) => (
             <Grid item xs={6} md={3} key={index}>
@@ -796,11 +802,11 @@ const LandingPageNew = () => {
                 initial={{ y: 50, opacity: 0, scale: 0.5 }}
                 whileInView={{ y: 0, opacity: 1, scale: 1 }}
                 viewport={{ once: false, amount: 0.5 }}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.15,
                   type: "spring",
-                  stiffness: 100
+                  stiffness: 100,
                 }}
                 whileHover={{ y: -15, scale: 1.05 }}
               >
@@ -819,8 +825,14 @@ const LandingPageNew = () => {
                       p: 4,
                       textAlign: "center",
                       background: isDark
-                        ? `linear-gradient(135deg, ${alpha("#1a1d29", 0.9)} 0%, ${alpha("#0a0e1a", 0.9)} 100%)`
-                        : `linear-gradient(135deg, ${alpha("#ffffff", 0.95)} 0%, ${alpha("#f8fafc", 0.95)} 100%)`,
+                        ? `linear-gradient(135deg, ${alpha(
+                            "#1a1d29",
+                            0.9
+                          )} 0%, ${alpha("#0a0e1a", 0.9)} 100%)`
+                        : `linear-gradient(135deg, ${alpha(
+                            "#ffffff",
+                            0.95
+                          )} 0%, ${alpha("#f8fafc", 0.95)} 100%)`,
                       backdropFilter: "blur(30px)",
                       border: `2px solid ${
                         isDark ? alpha("#e63946", 0.3) : alpha("#1976d2", 0.3)
@@ -886,8 +898,8 @@ const LandingPageNew = () => {
                         zIndex: 1,
                       }}
                     >
-                      <AnimatedCounter 
-                        end={parseInt(stat.value.replace(/[^0-9]/g, ""))} 
+                      <AnimatedCounter
+                        end={parseInt(stat.value.replace(/[^0-9]/g, ""))}
                         suffix={stat.value.replace(/[0-9]/g, "")}
                       />
                     </Typography>
@@ -999,10 +1011,9 @@ const LandingPageNew = () => {
                         width: 80,
                         height: 80,
                         borderRadius: "50%",
-                        background: `linear-gradient(135deg, ${feature.color} 0%, ${alpha(
-                          feature.color,
-                          0.6
-                        )} 100%)`,
+                        background: `linear-gradient(135deg, ${
+                          feature.color
+                        } 0%, ${alpha(feature.color, 0.6)} 100%)`,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -1010,9 +1021,7 @@ const LandingPageNew = () => {
                         boxShadow: `0 10px 40px ${alpha(feature.color, 0.4)}`,
                       }}
                     >
-                      <feature.icon
-                        sx={{ fontSize: 40, color: "white" }}
-                      />
+                      <feature.icon sx={{ fontSize: 40, color: "white" }} />
                     </Box>
                   </motion.div>
                   <Typography
@@ -1222,7 +1231,10 @@ const LandingPageNew = () => {
                 Join thousands of businesses already shipping smarter
               </Typography>
               <MagneticButton>
-                <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.85 }}>
+                <motion.div
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.85 }}
+                >
                   <Button
                     variant="contained"
                     size="large"
@@ -1261,9 +1273,7 @@ const LandingPageNew = () => {
           position: "relative",
           zIndex: 1,
           py: 8,
-          background: isDark
-            ? alpha("#1a1d29", 0.8)
-            : alpha("#000000", 0.05),
+          background: isDark ? alpha("#1a1d29", 0.8) : alpha("#000000", 0.05),
           backdropFilter: "blur(20px)",
           borderTop: `1px solid ${
             isDark ? alpha("#ffffff", 0.1) : alpha("#000000", 0.1)
