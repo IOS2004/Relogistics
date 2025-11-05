@@ -17,13 +17,16 @@ import LoadDetailsPage from "../pages/LoadDetailsPage.jsx";
 import VehiclesPage from "../pages/VehiclesPage.jsx";
 import TrackingPage from "../pages/TrackingPage.jsx";
 import PaymentsPage from "../pages/PaymentsPage.jsx";
+import ReportsPage from "../pages/ReportsPage.jsx";
 import ProfilePage from "../pages/ProfilePage.jsx";
 import SettingsPage from "../pages/SettingsPage.jsx";
 import PrivateRoute from "../components/auth/PrivateRoute";
 import BottomNavigation from "../components/common/BottomNavigation.jsx";
 
-const getRoleDashboard = (role) => {
-  switch (role?.toLowerCase()) {
+const DashboardRouter = () => {
+  const userRole = localStorage.getItem("userRole");
+  
+  switch (userRole?.toLowerCase()) {
     case "broker":
       return <BrokerDashboard />;
     case "vehicle owner":
@@ -31,13 +34,11 @@ const getRoleDashboard = (role) => {
     case "driver":
       return <DriverDashboard />;
     default:
-      return <BrokerDashboard />; // Default or handle unknown role
+      return <BrokerDashboard />;
   }
 };
 
 const AppRouter = () => {
-  // TODO: Get user role from Redux store or localStorage
-  const userRole = localStorage.getItem("userRole");
   const isAuthenticated = !!localStorage.getItem("token");
 
   return (
@@ -52,7 +53,7 @@ const AppRouter = () => {
           {/* Protected Routes */}
           <Route
             path="/dashboard"
-            element={<PrivateRoute>{getRoleDashboard(userRole)}</PrivateRoute>}
+            element={<PrivateRoute><DashboardRouter /></PrivateRoute>}
           />
 
           {/* Role-specific dashboard routes */}
@@ -119,6 +120,14 @@ const AppRouter = () => {
             element={
               <PrivateRoute>
                 <PaymentsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/reports"
+            element={
+              <PrivateRoute>
+                <ReportsPage />
               </PrivateRoute>
             }
           />

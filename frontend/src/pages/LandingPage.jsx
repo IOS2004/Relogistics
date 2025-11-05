@@ -142,6 +142,9 @@ const LandingPage = () => {
             </Typography>
             <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
               <Typography
+                onClick={() => {
+                  document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 sx={{
                   cursor: "pointer",
                   fontSize: "0.95rem",
@@ -156,6 +159,9 @@ const LandingPage = () => {
                 Services
               </Typography>
               <Typography
+                onClick={() => {
+                  document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 sx={{
                   cursor: "pointer",
                   fontSize: "0.95rem",
@@ -170,6 +176,9 @@ const LandingPage = () => {
                 Solutions
               </Typography>
               <Typography
+                onClick={() => {
+                  document.getElementById('tracking-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 sx={{
                   cursor: "pointer",
                   fontSize: "0.95rem",
@@ -184,6 +193,9 @@ const LandingPage = () => {
                 Track
               </Typography>
               <Typography
+                onClick={() => {
+                  document.getElementById('footer-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 sx={{
                   cursor: "pointer",
                   fontSize: "0.95rem",
@@ -383,7 +395,7 @@ const LandingPage = () => {
             </Grid>
 
             {/* Right - Tracking Widget */}
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={5} id="tracking-section">
               <Card
                 sx={{
                   bgcolor: isDark
@@ -638,6 +650,7 @@ const LandingPage = () => {
 
       {/* Services Section */}
       <Box
+        id="services-section"
         sx={{
           py: { xs: 6, sm: 8 },
           bgcolor: isDark ? "#0a0e1a" : "background.default",
@@ -773,6 +786,7 @@ const LandingPage = () => {
 
       {/* Footer */}
       <Box
+        id="footer-section"
         sx={{
           py: { xs: 4, sm: 6 },
           bgcolor: isDark ? "#1a1d29" : "background.paper",

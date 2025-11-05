@@ -74,11 +74,21 @@ const Register = () => {
       try {
         // TODO: Implement registration API call
         console.log("Form submitted:", values);
+        
+        // Save token and user role to localStorage
+        localStorage.setItem("token", "demo-token-123");
+        localStorage.setItem("userRole", values.role);
+        
         setAlert({
           open: true,
           message: "Registration successful!",
           severity: "success",
         });
+        
+        // Redirect to dashboard after short delay
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 500);
       } catch (error) {
         setAlert({
           open: true,

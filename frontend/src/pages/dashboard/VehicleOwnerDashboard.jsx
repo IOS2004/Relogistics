@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Grid, Container, Typography, Box, Button } from "@mui/material";
 import { Add } from "@mui/icons-material";
-import DashboardLayout from "../../components/layout/DashboardLayout";
 import LoadingSpinner from "../../components/common/LoadingSpinner";
 import VehicleRegistrationForm from "../../components/forms/VehicleRegistrationForm";
 import LoadListing from "../../components/loads/LoadListing";
@@ -23,28 +22,24 @@ const VehicleOwnerDashboard = () => {
 
   const stats = [
     {
-      icon: "🚚",
       title: "Total Vehicles",
       value: "5",
       change: "+2 this month",
       color: "#3b82f6",
     },
     {
-      icon: "🔄",
       title: "Active Trips",
       value: "3",
       change: "Currently running",
       color: "#8b5cf6",
     },
     {
-      icon: "💰",
       title: "Monthly Earnings",
       value: "₹2,45,000",
       change: "+18% from last month",
       color: "#10b981",
     },
     {
-      icon: "⏳",
       title: "Pending Payments",
       value: "₹85,000",
       change: "To be received",
@@ -151,13 +146,12 @@ const VehicleOwnerDashboard = () => {
   }
 
   return (
-    <DashboardLayout>
-      <Container
-        maxWidth="xl"
-        sx={{ py: { xs: 2, sm: 3, md: 4 }, px: { xs: 2, sm: 3 } }}
-      >
-        {/* Header */}
-        <Box sx={{ mb: { xs: 3, md: 4 } }}>
+    <Container
+      maxWidth="xl"
+      sx={{ py: { xs: 2, sm: 3, md: 4 }, px: { xs: 2, sm: 3 } }}
+    >
+      {/* Header */}
+      <Box sx={{ mb: { xs: 3, md: 4 } }}>
           <Typography
             variant={isMobile ? "h4" : "h3"}
             sx={{
@@ -166,7 +160,7 @@ const VehicleOwnerDashboard = () => {
               fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
             }}
           >
-            Vehicle Owner Dashboard 🚛
+            Vehicle Owner Dashboard
           </Typography>
           <Typography
             variant="body1"
@@ -295,10 +289,9 @@ const VehicleOwnerDashboard = () => {
             </Grid>
           ))}
         </Grid>
-      </Container>
 
-      {/* Dialogs */}
-      <VehicleRegistrationForm
+        {/* Dialogs */}
+        <VehicleRegistrationForm
         open={openVehicleForm}
         onClose={() => {
           setOpenVehicleForm(false);
@@ -313,7 +306,7 @@ const VehicleOwnerDashboard = () => {
         onSubmit={handleBidSubmit}
         load={selectedLoad}
       />
-    </DashboardLayout>
+    </Container>
   );
 };
 

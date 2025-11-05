@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Container, Typography, Box, Button } from "@mui/material";
 import { CheckCircle, Warning, Phone } from "@mui/icons-material";
-import DashboardLayout from "../../components/layout/DashboardLayout";
 import LoadingSpinner from "../../components/common/LoadingSpinner";
 import ModernStatCard from "../../components/common/ModernStatCard";
 import CurrentTripEnhancedCard from "../../components/driver/CurrentTripEnhancedCard";
@@ -15,28 +14,24 @@ const DriverDashboard = () => {
 
   const stats = [
     {
-      icon: "✅",
       title: "Trips Completed",
       value: "127",
       change: "+12 this month",
       color: "#10b981",
     },
     {
-      icon: "🚚",
       title: "Active Trip",
       value: "1",
       change: "In Transit",
       color: "#3b82f6",
     },
     {
-      icon: "💰",
       title: "This Month Earnings",
       value: "₹67,000",
       change: "+38% from last month",
       color: "#8b5cf6",
     },
     {
-      icon: "⏱️",
       title: "On-Time Deliveries",
       value: "98.5%",
       change: "Excellent rating",
@@ -75,14 +70,13 @@ const DriverDashboard = () => {
   }
 
   return (
-    <DashboardLayout>
-      <Container
-        maxWidth="xl"
-        sx={{ py: { xs: 2, sm: 3, md: 4 }, px: { xs: 2, sm: 3 } }}
-      >
-        {/* Header */}
-        <Box sx={{ mb: { xs: 3, md: 4 } }}>
-          <Typography
+    <Container
+      maxWidth="xl"
+      sx={{ py: { xs: 2, sm: 3, md: 4 }, px: { xs: 2, sm: 3 } }}
+    >
+      {/* Header */}
+      <Box sx={{ mb: { xs: 3, md: 4 } }}>
+        <Typography
             variant={isMobile ? "h4" : "h3"}
             sx={{
               fontWeight: 700,
@@ -90,7 +84,7 @@ const DriverDashboard = () => {
               fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
             }}
           >
-            Driver Dashboard 🚛
+            Driver Dashboard
           </Typography>
           <Typography
             variant="body1"
@@ -256,8 +250,7 @@ const DriverDashboard = () => {
             <UpcomingTripsCard />
           </Grid>
         </Grid>
-      </Container>
-    </DashboardLayout>
+    </Container>
   );
 };
 

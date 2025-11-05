@@ -7,7 +7,6 @@ import {
   Add,
   CheckCircle,
 } from "@mui/icons-material";
-import DashboardLayout from "../../components/layout/DashboardLayout";
 import ModernStatCard from "../../components/common/ModernStatCard";
 import LoadPostingForm from "../../components/forms/LoadPostingForm";
 import EnhancedLoadCard from "../../components/loads/EnhancedLoadCard";
@@ -103,11 +102,10 @@ const BrokerDashboard = () => {
   ];
 
   return (
-    <DashboardLayout>
-      <Container
-        maxWidth="xl"
-        sx={{ py: { xs: 2, sm: 3, md: 4 }, px: { xs: 2, sm: 3 } }}
-      >
+    <Container
+      maxWidth="xl"
+      sx={{ py: { xs: 2, sm: 3, md: 4 }, px: { xs: 2, sm: 3 } }}
+    >
         <Box sx={{ mb: { xs: 3, md: 4 } }}>
           <Typography
             variant={isMobile ? "h4" : "h3"}
@@ -216,17 +214,16 @@ const BrokerDashboard = () => {
             <ActivityFeed />
           </Grid>
         </Grid>
-      </Container>
 
-      <LoadPostingForm
-        open={openLoadForm}
-        onClose={() => setOpenLoadForm(false)}
-        onSubmit={(values) => {
-          console.log("Load posted:", values);
-          setOpenLoadForm(false);
-        }}
-      />
-    </DashboardLayout>
+        <LoadPostingForm
+          open={openLoadForm}
+          onClose={() => setOpenLoadForm(false)}
+          onSubmit={(values) => {
+            console.log("Load posted:", values);
+            setOpenLoadForm(false);
+          }}
+        />
+      </Container>
   );
 };
 
